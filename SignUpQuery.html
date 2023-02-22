@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>修改報名資料</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!--BS5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    <!--LINE-->
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <br />
+    <div id="u_signUpApp" class="d-none container-md">
+        <main class="form-signin">
+            <form class="text-center" id="u_signUpForm">
+                <h1 class="h1 mb-4 fw-normal text-primary" id="u_title">梯次</h1>
+                <div class="form-floating mb-3">
+                    <input type="text" id="u_userName" class="form-control form-control-lg" placeholder="姓名" required>
+                    <label for="userName">姓名</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" id="u_userTel" pattern="\d*" maxlength="10"
+                        class="form-control form-control-lg" placeholder="電話" required>
+                    <label for="userTel">電話</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" id="u_userEmail" class="form-control form-control-lg" placeholder="Email">
+                    <label for="userEmail">電子郵件Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" id="u_userNum" class="form-control form-control-lg" pattern="\d*" min="1"
+                        max="50" placeholder="人數" required>
+                    <label for="userNum">參加人數</label>
+                </div>
+                <br />
+                <button id="u_ckSignUpBtn" class="w-100 btn btn-lg btn-warning mb-3" data-type="" data-ticket=""
+                    data-userid="" type="submit">
+                    <span class="d-none spinner-border text-light spinner-border-sm" role="status" aria-hidden="true"
+                        id="u_ckSignUpBtnLoading"></span>
+                    <strong>修改</strong>
+                </button>
+                <p class="mt-5 mb-3 text-muted">©一介草民</p>
+            </form>
+        </main>
+    </div>
+    <div id="u_signUpSuccess" class="d-none card mx-auto" style="width: 18rem;">
+        <img src="https://www.twtainan.net/content/images/articles/74443/1024x768_articles-image-u-88zpesyeoexj_dausidw.jpg"
+            class="card-img-top" alt="...">
+        <div class="card-body">
+            <h3 class="card-title text-warning" id="u_successHeader">報名資料修改為</h3>
+            <h4 id="u_signUpInfo" class="card-text"></h4>
+        </div>
+    </div>
+    <!--載入JS-->
+    <script src="https://linebot.honorseiki.com:44391/FireflyLineBot/myJS/SignUpQuery.js?ver=20230201"></script>
+    
+</body>
+
+</html>
